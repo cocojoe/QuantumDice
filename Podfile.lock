@@ -1,0 +1,17 @@
+PODS:
+  - Alamofire (3.4.1)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+
+DEPENDENCIES:
+  - Alamofire
+  - ChameleonFramework/Swift
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+
+PODFILE CHECKSUM: 68c179297ca0587c77b72bb5af0e74690a1d7db8
+
+COCOAPODS: 1.0.0
