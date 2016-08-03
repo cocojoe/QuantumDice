@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var randomNumberGenerator = RandomNumberGenerator()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,12 +19,12 @@ class ViewController: UIViewController {
         /* Initialise quantum block */
         randomNumberGenerator.refreshQuantumBlock()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

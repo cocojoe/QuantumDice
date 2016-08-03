@@ -27,7 +27,7 @@ class NetworkManager {
             Constants.Quantum.domain : .DisableEvaluation
         ]
         
-        /* Setup custom manager */
+        // Setup custom manager
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         
         manager = Alamofire.Manager(configuration: configuration, serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies))
@@ -38,6 +38,7 @@ class NetworkManager {
         manager.request(.GET, URLString, parameters: parameters)
             .validate()
             .responseJSON { response in
+                
                 switch response.result {
                 case .Success:
                     let responseJSON = JSON(response.result.value!)
@@ -48,5 +49,5 @@ class NetworkManager {
                 }
         }
     }
-
+    
 }
