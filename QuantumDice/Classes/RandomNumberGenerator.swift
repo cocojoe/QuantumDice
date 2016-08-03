@@ -8,20 +8,25 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class RandomNumberGenerator {
     
     /* Cache quantum block */
     var quantumBlock:[UInt8] = []
     
-    func random() -> Bool {
-        return true
-    }
-    
-    func populateQuantumBlock() {
+    func refreshQuantumBlock() {
         
-        /* Request quantum rng block, 10 numbers between 0 - 255 */
-        NetworkManager.sharedInstance.requestJSON("https://\(Constants.quantumDomain)/API/jsonI.php", parameters: ["length": "10", "type" : "uint8"])
+        let URL = "https://\(Constants.Quantum.domain)/API/jsonI.php"
+        let parameters = ["length": Constants.Quantum.block, "type" :  Constants.Quantum.type]
+        
+        NetworkManager.sharedInstance.requestJSON(URL, parameters: parameters) {
+            (result: Bool, jsonData: JSON?) in
+            print(jsonData)
+        }
     }
     
+    func populateQuantumBlock(quantumJSON: JSON) {
+        
+    }
 }

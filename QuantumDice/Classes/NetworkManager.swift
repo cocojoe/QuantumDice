@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class NetworkManager {
     
@@ -23,7 +24,7 @@ class NetworkManager {
          Turns out this was actually an issue in NSAppTransportSecurity and TLS 1.0.  However, leaving this in just in case and it's a good example to have anyway.
          */
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            Constants.quantumDomain : .DisableEvaluation
+            Constants.Quantum.domain : .DisableEvaluation
         ]
         
         /* Setup custom manager */
@@ -32,23 +33,20 @@ class NetworkManager {
         manager = Alamofire.Manager(configuration: configuration, serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies))
     }
     
-    func requestJSON(URLString: URLStringConvertible,
-                     parameters: [String: AnyObject]?) -> String? {
-        /* Request URL, validate and return JSON */
- 
-        let result:String? = nil
+    func requestJSON( URLString: URLStringConvertible, parameters: [String: AnyObject]? = nil, completionHandler: (result: Bool, jsonData: JSON?) -> Void ) {
         
         manager.request(.GET, URLString, parameters: parameters)
             .validate()
             .responseJSON { response in
                 switch response.result {
                 case .Success:
-                    print(response)
+                    let responseJSON = JSON(response.result.value!)
+                    completionHandler(result: true, jsonData: responseJSON)
                 case .Failure(let error):
                     print(error)
+                    completionHandler(result: false, jsonData: nil)
                 }
         }
-        
-        return result
     }
+
 }
