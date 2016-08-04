@@ -13,12 +13,24 @@ enum Dice:UInt8 {
     case d2 = 2, d4 = 4, d6 = 6, d8 = 8, d10 = 10, d12 = 12, d20 = 20, d100 = 100
 }
 
+enum Status {
+    case empty, charging, charged, error
+}
+
 class RandomNumberGenerator {
     
     // Cache quantum block
     var quantumBlock:[UInt8] = []
+    var delegate:RandomNumberGeneratorDelegate?
+    var status = Status.empty {
+        didSet {
+            delegate?.didChangeStatus(status)
+        }
+    }
     
     func refreshQuantumBlock() {
+        
+        status = Status.charging
         
         // Refresh quantum number block data
         let URL = "https://\(Constants.Quantum.domain)/API/jsonI.php"
@@ -28,7 +40,7 @@ class RandomNumberGenerator {
             (result: Bool, jsonData: JSON?) in
             
             guard let jsonData = jsonData else {
-                // TODO: Inform User
+                self.status = Status.error
                 return
             }
             
@@ -42,13 +54,16 @@ class RandomNumberGenerator {
         for number in quantumJSON["data"].arrayValue {
             quantumBlock.append(number.uInt8Value)
         }
+        
+        status = Status.charged
     }
     
-    func nextNumberInBase(base: Dice) -> UInt8 {
+    func nextNumberInBase(base: Dice) -> UInt8? {
         // Convert number from block to appropriate base range
         
         guard let nextNumber = quantumBlock.popLast() else {
-            return 0
+            status = Status.empty
+            return nil
         }
         
         let ratio = Float(base.rawValue) / Float(UInt8.max)
@@ -57,4 +72,9 @@ class RandomNumberGenerator {
         return random
         
     }
+}
+
+// MARK: Protocol
+protocol RandomNumberGeneratorDelegate: class {
+    func didChangeStatus(status: Status)
 }

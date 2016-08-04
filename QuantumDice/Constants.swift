@@ -6,10 +6,16 @@
 //  Copyright © 2016 Frosty Cube. All rights reserved.
 //
 
+import ChameleonFramework
+
 struct Constants {
     struct Quantum {
         static let domain = "qrng.anu.edu.au"
         static let block  = 10
         static let type   = "uint8"
+    }
+    
+    struct Skin {
+        static let backgroundColor = FlatBlue()
     }
 }

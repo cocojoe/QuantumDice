@@ -9,6 +9,7 @@ target 'QuantumDice' do
   pod 'Alamofire'
   pod 'ChameleonFramework/Swift'
   pod 'SwiftyJSON'
+  pod 'SwiftSpinner'
 
   target 'QuantumDiceTests' do
     inherit! :search_paths

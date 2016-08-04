@@ -14,6 +14,7 @@ import SwiftyJSON
 class RandomNumberGeneratorTests: XCTestCase {
     
     let RNG = RandomNumberGenerator()
+    let testBlockSize  = 10
     let JSONSampleGood = JSON.parse("{\"type\":\"uint8\",\"length\":10,\"data\":[197,202,139,42,209,125,69,103,93,99],\"success\":true}")
     let JSONSampleBad = JSON.parse("{\"type\":\"uint8\",\"length\":10,\"data\":[197,202,139,42,209,125,69,103,93],\"success\":true}")
     
@@ -32,7 +33,7 @@ class RandomNumberGeneratorTests: XCTestCase {
         let expectation = expectationWithDescription("QuantumJSONData")
         
         let URL = "https://\(Constants.Quantum.domain)/API/jsonI.php"
-        let parameters = ["length": String(Constants.Quantum.block), "type" :  Constants.Quantum.type]
+        let parameters = ["length": String(testBlockSize), "type" :  Constants.Quantum.type]
         
         NetworkManager.sharedInstance.requestJSON(URL, parameters: parameters) {
             (result: Bool, jsonData: JSON?) in
@@ -51,7 +52,7 @@ class RandomNumberGeneratorTests: XCTestCase {
         
         // Bad URL
         let URL = "https://\(Constants.Quantum.domain)/API/jsonI1.php"
-        let parameters = ["length": String(Constants.Quantum.block), "type" :  Constants.Quantum.type]
+        let parameters = ["length": String(testBlockSize), "type" :  Constants.Quantum.type]
         
         NetworkManager.sharedInstance.requestJSON(URL, parameters: parameters) {
             (result: Bool, jsonData: JSON?) in
@@ -69,7 +70,7 @@ class RandomNumberGeneratorTests: XCTestCase {
         RNG.populateQuantumBlock(JSONSampleGood)
         let count = RNG.quantumBlock.count
         
-        XCTAssertEqual(count,Constants.Quantum.block)
+        XCTAssertEqual(count,testBlockSize)
     }
     
     func testPopulateQuantumBlockFailure() {
@@ -77,13 +78,16 @@ class RandomNumberGeneratorTests: XCTestCase {
         RNG.populateQuantumBlock(JSONSampleBad)
         let count = RNG.quantumBlock.count
         
-        XCTAssertEqual(count,Constants.Quantum.block - 1)
+        XCTAssertEqual(count,testBlockSize - 1)
     }
     
     func testNextNumberInBase20Success() {
         RNG.populateQuantumBlock(JSONSampleGood)
         
-        let randomNumber = RNG.nextNumberInBase(Dice.d20)
+        guard let randomNumber = RNG.nextNumberInBase(Dice.d20) else {
+            XCTFail("Should not be nil")
+            return
+        }
         XCTAssertGreaterThanOrEqual(randomNumber, 1)
         XCTAssertLessThanOrEqual(randomNumber, Dice.d20.rawValue)
     }
@@ -91,7 +95,11 @@ class RandomNumberGeneratorTests: XCTestCase {
     func testNextNumberInBase12Success() {
         RNG.populateQuantumBlock(JSONSampleGood)
         
-        let randomNumber = RNG.nextNumberInBase(Dice.d12)
+        guard let randomNumber = RNG.nextNumberInBase(Dice.d12) else {
+            XCTFail("Should not be nil")
+            return
+        }
+
         XCTAssertGreaterThanOrEqual(randomNumber, 1)
         XCTAssertLessThanOrEqual(randomNumber, Dice.d12.rawValue)
     }
@@ -99,7 +107,11 @@ class RandomNumberGeneratorTests: XCTestCase {
     func testNextNumberInBase10Success() {
         RNG.populateQuantumBlock(JSONSampleGood)
         
-        let randomNumber = RNG.nextNumberInBase(Dice.d10)
+        guard let randomNumber = RNG.nextNumberInBase(Dice.d10) else {
+            XCTFail("Should not be nil")
+            return
+        }
+
         XCTAssertGreaterThanOrEqual(randomNumber, 1)
         XCTAssertLessThanOrEqual(randomNumber, Dice.d10.rawValue)
     }
@@ -107,7 +119,11 @@ class RandomNumberGeneratorTests: XCTestCase {
     func testNextNumberInBase8Success() {
         RNG.populateQuantumBlock(JSONSampleGood)
         
-        let randomNumber = RNG.nextNumberInBase(Dice.d8)
+        guard let randomNumber = RNG.nextNumberInBase(Dice.d8) else {
+            XCTFail("Should not be nil")
+            return
+        }
+
         XCTAssertGreaterThanOrEqual(randomNumber, 1)
         XCTAssertLessThanOrEqual(randomNumber, Dice.d8.rawValue)
     }
@@ -115,7 +131,11 @@ class RandomNumberGeneratorTests: XCTestCase {
     func testNextNumberInBase6Success() {
         RNG.populateQuantumBlock(JSONSampleGood)
         
-        let randomNumber = RNG.nextNumberInBase(Dice.d6)
+        guard let randomNumber = RNG.nextNumberInBase(Dice.d6) else {
+            XCTFail("Should not be nil")
+            return
+        }
+
         XCTAssertGreaterThanOrEqual(randomNumber, 1)
         XCTAssertLessThanOrEqual(randomNumber, Dice.d6.rawValue)
     }
@@ -123,9 +143,25 @@ class RandomNumberGeneratorTests: XCTestCase {
     func testNextNumberInBase4Success() {
         RNG.populateQuantumBlock(JSONSampleGood)
         
-        let randomNumber = RNG.nextNumberInBase(Dice.d4)
+        guard let randomNumber = RNG.nextNumberInBase(Dice.d4) else {
+            XCTFail("Should not be nil")
+            return
+        }
+
         XCTAssertGreaterThanOrEqual(randomNumber, 1)
         XCTAssertLessThanOrEqual(randomNumber, Dice.d4.rawValue)
+    }
+    
+    func testNextNumberInBase2Success() {
+        RNG.populateQuantumBlock(JSONSampleGood)
+        
+        guard let randomNumber = RNG.nextNumberInBase(Dice.d2) else {
+            XCTFail("Should not be nil")
+            return
+        }
+
+        XCTAssertGreaterThanOrEqual(randomNumber, 1)
+        XCTAssertLessThanOrEqual(randomNumber, Dice.d2.rawValue)
     }
     
 }
