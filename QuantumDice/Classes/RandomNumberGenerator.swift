@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 enum Dice:UInt8 {
-    case d2 = 2, d4 = 4, d6 = 6, d8 = 8, d10 = 10, d12 = 12, d20 = 20, d100 = 100
+    case d0 = 0, d2 = 2, d3 = 3, d4 = 4, d6 = 6, d8 = 8, d10 = 10, d12 = 12, d20 = 20, d100 = 100
 }
 
 enum Status {
@@ -67,7 +67,7 @@ class RandomNumberGenerator {
         }
         
         let ratio = Float(base.rawValue) / Float(UInt8.max)
-        let random = UInt8( Float(nextNumber) * ratio ) + 1
+        let random = UInt8( floor(Float(nextNumber) * ratio) ) + 1
         
         print("\(nextNumber), Base: \(base), Random: \(random)")
 

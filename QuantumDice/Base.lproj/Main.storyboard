@@ -20,98 +20,194 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnh-E5-KH9" customClass="DiceButton" customModule="QuantumDice" customModuleProvider="target">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="fnh-E5-KH9" secondAttribute="height" multiplier="1:1" id="lRb-di-Syf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="72"/>
-                                <state key="normal" backgroundImage="button_border">
-                                    <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="lRb-di-Syf"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="lRb-di-Syf"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="rollDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fXV-3J-M8u"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1as-S8-AmI" customClass="DiceButton" customModule="QuantumDice" customModuleProvider="target">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="1as-S8-AmI" secondAttribute="height" multiplier="1:1" id="OIa-S0-WR9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="72"/>
-                                <state key="normal" backgroundImage="button_border">
-                                    <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="OIa-S0-WR9"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="OIa-S0-WR9"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="rollDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2dq-am-dtV"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TQL-BQ-Bg3">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="794"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="fnh-E5-KH9" customClass="DiceButton" customModule="QuantumDice" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fnh-E5-KH9" secondAttribute="height" multiplier="1:1" id="lRb-di-Syf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="144"/>
+                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                        <state key="normal" backgroundImage="button_border"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="lRb-di-Syf"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="lRb-di-Syf"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="rollDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fXV-3J-M8u"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Ejv-RR-vf0" customClass="DiceButton" customModule="QuantumDice" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="280" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ejv-RR-vf0" secondAttribute="height" multiplier="1:1" id="M8e-oj-EYR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="144"/>
+                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                        <state key="normal" backgroundImage="button_border"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="M8e-oj-EYR"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="M8e-oj-EYR"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="rollDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K03-YB-O7X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="wWb-hk-Jdh" customClass="DiceButton" customModule="QuantumDice" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="534" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wWb-hk-Jdh" secondAttribute="height" multiplier="1:1" id="0c7-45-Bu6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="144"/>
+                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                        <state key="normal" backgroundImage="button_border"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0c7-45-Bu6"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="0c7-45-Bu6"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="rollDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KZI-xA-YyA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=regular" axis="vertical"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4zk-yQ-PpZ">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="794"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Vt7-MK-gzR" customClass="DiceButton" customModule="QuantumDice" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Vt7-MK-gzR" secondAttribute="height" multiplier="1:1" id="3d9-ut-if8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="144"/>
+                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                        <state key="normal" backgroundImage="button_border"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="3d9-ut-if8"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="3d9-ut-if8"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="rollDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dMQ-Vg-ev9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="fdl-3o-NJ3" customClass="DiceButton" customModule="QuantumDice" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="280" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fdl-3o-NJ3" secondAttribute="height" multiplier="1:1" id="3Rb-DC-Y6y"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="144"/>
+                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                        <state key="normal" backgroundImage="button_border"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="3Rb-DC-Y6y"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="3Rb-DC-Y6y"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="rollDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pvl-SW-fPO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="6XB-xk-Q3a" customClass="DiceButton" customModule="QuantumDice" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="534" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="6XB-xk-Q3a" secondAttribute="height" multiplier="1:1" id="vGm-nd-6oY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="144"/>
+                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                        <state key="normal" backgroundImage="button_border"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="vGm-nd-6oY"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="vGm-nd-6oY"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="rollDice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YsI-8O-wD6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=regular" axis="vertical"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1as-S8-AmI" firstAttribute="width" secondItem="1as-S8-AmI" secondAttribute="height" multiplier="1:1" id="1g9-t0-vpV"/>
-                            <constraint firstItem="1as-S8-AmI" firstAttribute="width" secondItem="fnh-E5-KH9" secondAttribute="width" id="F3B-EV-DYT"/>
-                            <constraint firstItem="fnh-E5-KH9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Isx-NL-ikP"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="fnh-E5-KH9" secondAttribute="leading" id="KPM-Lv-JpF">
-                                <variation key="heightClass=regular" constant="0.0"/>
-                            </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="1as-S8-AmI" secondAttribute="trailing" id="Qld-ZK-syl"/>
-                            <constraint firstItem="1as-S8-AmI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ouO-ys-spV"/>
-                            <constraint firstItem="1as-S8-AmI" firstAttribute="height" secondItem="fnh-E5-KH9" secondAttribute="height" id="qzT-Ry-epF"/>
-                            <constraint firstItem="fnh-E5-KH9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="ubS-eF-g2C"/>
+                            <constraint firstItem="4zk-yQ-PpZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JD3-Jk-m8n"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="TQL-BQ-Bg3" secondAttribute="leading" id="Tnt-Gd-IjB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4zk-yQ-PpZ" secondAttribute="trailing" id="dHe-yE-UfL"/>
+                            <constraint firstItem="TQL-BQ-Bg3" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="gHC-8Q-4ah"/>
+                            <constraint firstItem="TQL-BQ-Bg3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="r13-Qm-k5q"/>
+                            <constraint firstItem="4zk-yQ-PpZ" firstAttribute="width" secondItem="TQL-BQ-Bg3" secondAttribute="width" id="wKO-E4-uiQ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="fnh-E5-KH9"/>
-                                <exclude reference="1as-S8-AmI"/>
+                                <exclude reference="4zk-yQ-PpZ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="KPM-Lv-JpF"/>
-                                <exclude reference="ubS-eF-g2C"/>
-                                <exclude reference="1g9-t0-vpV"/>
-                                <exclude reference="F3B-EV-DYT"/>
-                                <exclude reference="Qld-ZK-syl"/>
-                                <exclude reference="qzT-Ry-epF"/>
+                                <exclude reference="Tnt-Gd-IjB"/>
+                                <exclude reference="gHC-8Q-4ah"/>
+                                <exclude reference="r13-Qm-k5q"/>
+                                <exclude reference="JD3-Jk-m8n"/>
+                                <exclude reference="dHe-yE-UfL"/>
+                                <exclude reference="wKO-E4-uiQ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
-                                <include reference="fnh-E5-KH9"/>
-                                <include reference="1as-S8-AmI"/>
+                                <include reference="4zk-yQ-PpZ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="KPM-Lv-JpF"/>
-                                <include reference="ubS-eF-g2C"/>
-                                <include reference="1g9-t0-vpV"/>
-                                <include reference="F3B-EV-DYT"/>
-                                <include reference="Qld-ZK-syl"/>
-                                <include reference="qzT-Ry-epF"/>
+                                <include reference="Tnt-Gd-IjB"/>
+                                <include reference="gHC-8Q-4ah"/>
+                                <include reference="r13-Qm-k5q"/>
+                                <include reference="JD3-Jk-m8n"/>
+                                <include reference="dHe-yE-UfL"/>
+                                <include reference="wKO-E4-uiQ"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="buttonDice1" destination="fnh-E5-KH9" id="XA6-vN-Y7u"/>
-                        <outlet property="buttonDice2" destination="1as-S8-AmI" id="rX9-bL-7pw"/>
+                        <outlet property="buttonDice2" destination="Vt7-MK-gzR" id="jEc-zG-jbC"/>
+                        <outlet property="buttonDice3" destination="Ejv-RR-vf0" id="r0i-84-IrX"/>
+                        <outlet property="buttonDice4" destination="fdl-3o-NJ3" id="BSg-sd-6Ay"/>
+                        <outlet property="buttonDice5" destination="wWb-hk-Jdh" id="EQ3-iz-UOx"/>
+                        <outlet property="buttonDice6" destination="6XB-xk-Q3a" id="6X5-xA-lta"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

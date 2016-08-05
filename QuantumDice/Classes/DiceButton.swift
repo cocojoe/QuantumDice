@@ -9,5 +9,5 @@
 import UIKit
 
 class DiceButton: UIButton {
-    var base = Dice.d10
+    var base = Dice.d0
 }
