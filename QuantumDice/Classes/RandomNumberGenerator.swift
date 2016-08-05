@@ -68,6 +68,8 @@ class RandomNumberGenerator {
         
         let ratio = Float(base.rawValue) / Float(UInt8.max)
         let random = UInt8( Float(nextNumber) * ratio ) + 1
+        
+        print("\(nextNumber), Base: \(base), Random: \(random)")
 
         return random
         

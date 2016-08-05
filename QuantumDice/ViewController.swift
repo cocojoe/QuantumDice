@@ -14,23 +14,26 @@ class ViewController: UIViewController {
     
     var randomNumberGenerator = RandomNumberGenerator()
     
-    @IBOutlet weak var buttonDice: UIButton!
+    @IBOutlet weak var buttonDice1: DiceButton!
+    @IBOutlet weak var buttonDice2: DiceButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Improve button title scaling
-        buttonDice.titleLabel?.adjustsFontSizeToFitWidth = true
-        buttonDice.titleLabel?.baselineAdjustment = UIBaselineAdjustment.AlignCenters
+//        // Improve button title scaling
+//        buttonDice.titleLabel?.adjustsFontSizeToFitWidth = true
+//        buttonDice.titleLabel?.baselineAdjustment = UIBaselineAdjustment.AlignCenters
         
         // Assign delegate
         randomNumberGenerator.delegate = self
         
-        setupSkin()
+        // Setup dice base
+        buttonDice1.base = Dice.d20
+        buttonDice2.base = Dice.d12
         
-        // Chamelon contrast status bar style
-        self.setStatusBarStyle(UIStatusBarStyleContrast)
+        // Add Colors
+        setupSkin()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -54,16 +57,17 @@ class ViewController: UIViewController {
     
     func refreshView() {
         // Clear display elements
-        buttonDice.setTitle(String(""), forState: .Normal)
+        buttonDice1.setTitle(String("D20"), forState: .Normal)
+        buttonDice2.setTitle(String("D12"), forState: .Normal)
         
         // Stock RNG
         randomNumberGenerator.refreshQuantumBlock()
     }
     
-    @IBAction func rollDice(sender: UIButton) {
-        // Update dicE with random ROLL
+    @IBAction func rollDice(sender: DiceButton) {
+        // Roll & update dice button
         
-        guard let random = randomNumberGenerator.nextNumberInBase(Dice.d12) else {
+        guard let random = randomNumberGenerator.nextNumberInBase(sender.base) else {
             // Empty dice display on nil result
             sender.setTitle(String(""), forState: .Normal)
             return
