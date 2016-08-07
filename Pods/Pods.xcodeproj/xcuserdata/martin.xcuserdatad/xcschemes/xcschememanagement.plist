@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LTMorphingLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-QuantumDice.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,6 +47,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>197128CA6B098ABD44F1C85A81471ABD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3C900E8E2449EBBCC12128A9BDA69E7F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
 		<dict>
 			<key>primary</key>
@@ -57,22 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>924B62921A7C4297E3C24D2BEAD45769</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9373AE92C1B938AF54BF3224D47555D4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>9422754C9464B84D03723AD74C07325D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C02EE8D9BDF5C7D6E23E940F7D20E9D7</key>
+		<key>CC21590C537E7EEAF320981D09B437A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D7B7E54E888D6B0EC15EF3FB64F84667</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -18,31 +18,20 @@ func convertRange(baseMin baseMin: Double, baseMax: Double, limitMin: Double, li
     return ((limitMax - limitMin) * (value - baseMin) / (baseMax - baseMin)) + limitMin;
 }
 
-extension UIImage {
-    
-    func maskWithColor(color: UIColor) -> UIImage? {
-        /* Image tinting */
-        
-        let maskImage = self.CGImage
-        let width = self.size.width
-        let height = self.size.height
-        let bounds = CGRectMake(0, 0, width, height)
-        
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue)
-        let bitmapContext = CGBitmapContextCreate(nil, Int(width), Int(height), 8, 0, colorSpace, bitmapInfo.rawValue) //needs rawValue of bitmapInfo
-        
-        CGContextClipToMask(bitmapContext, bounds, maskImage)
-        CGContextSetFillColorWithColor(bitmapContext, color.CGColor)
-        CGContextFillRect(bitmapContext, bounds)
-        
-        //is it nil?
-        if let cImage = CGBitmapContextCreateImage(bitmapContext) {
-            let coloredImage = UIImage(CGImage: cImage)
-            return coloredImage
-        } else {
-            return nil
-        }
-    }
-    
+func tintedImageWithColor(tintColor: UIColor, image: UIImage) -> UIImage {
+    UIGraphicsBeginImageContextWithOptions(image.size, false, UIScreen.mainScreen().scale)
+    let context: CGContextRef = UIGraphicsGetCurrentContext()!
+    CGContextTranslateCTM(context, 0, image.size.height)
+    CGContextScaleCTM(context, 1.0, -1.0)
+    let rect: CGRect = CGRectMake(0, 0, image.size.width, image.size.height)
+    // draw alpha-mask
+    CGContextSetBlendMode(context, CGBlendMode.Normal)
+    CGContextDrawImage(context, rect, image.CGImage)
+    // draw tint color, preserving alpha values of original image
+    CGContextSetBlendMode(context, CGBlendMode.SourceIn)
+    tintColor.setFill()
+    CGContextFillRect(context, rect)
+    let coloredImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return coloredImage
 }

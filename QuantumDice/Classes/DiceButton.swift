@@ -32,7 +32,8 @@ class DiceButton: UIButton {
             
             // Background Image
             let diceImage = UIImage(named: "\(base)")?.imageWithRenderingMode(.AlwaysOriginal)
-            setBackgroundImage(diceImage, forState: .Normal)
+            let colorImage = tintedImageWithColor(UIColor(complementaryFlatColorOf:Constants.Skin.diceColor), image:diceImage!)
+            setBackgroundImage(colorImage, forState: .Normal)
             imageView?.contentMode = UIViewContentMode.ScaleAspectFit
             
             resetLabel()
