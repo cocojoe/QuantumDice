@@ -14,6 +14,10 @@ func print(items: Any..., separator: String = " ", terminator: String = "\n") {
     #endif
 }
 
+func convertRange(baseMin baseMin: Double, baseMax: Double, limitMin: Double, limitMax: Double, value: Double) -> Double {
+    return ((limitMax - limitMin) * (value - baseMin) / (baseMax - baseMin)) + limitMin;
+}
+
 extension UIImage {
     
     func maskWithColor(color: UIColor) -> UIImage? {
@@ -38,21 +42,7 @@ extension UIImage {
             return coloredImage
         } else {
             return nil
-        } 
+        }
     }
     
-}
-
-extension UILabel {
-    
-    public func actualFontSize()-> CGFloat {
-        
-        let context = NSStringDrawingContext()
-        context.minimumScaleFactor = self.minimumScaleFactor
-
-        let attributedString = NSAttributedString(string: self.text ?? "", attributes: [NSFontAttributeName: self.font])
-        attributedString.boundingRectWithSize(self.frame.size, options: [.UsesLineFragmentOrigin], context: context)
-        
-        return ( self.font.pointSize * context.actualScaleFactor )
-    }
 }

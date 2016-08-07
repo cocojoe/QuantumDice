@@ -16,10 +16,10 @@ struct Constants {
     }
     
     struct Skin {
-        static let backgroundColor = FlatBlue()
+        static let backgroundColor = FlatSkyBlue()
     }
     
     struct Font {
-        static let superSize:CGFloat = 144.0
+        static let defaultPointSize:CGFloat = 64.0
     }
 }

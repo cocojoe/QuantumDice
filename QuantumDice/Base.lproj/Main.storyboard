@@ -51,7 +51,7 @@
                                             <constraint firstAttribute="width" secondItem="Ejv-RR-vf0" secondAttribute="height" multiplier="1:1" id="M8e-oj-EYR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="144"/>
-                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="10"/>
+                                        <inset key="contentEdgeInsets" minX="25" minY="10" maxX="25" maxY="35"/>
                                         <state key="normal" backgroundImage="button_border"/>
                                         <variation key="default">
                                             <mask key="constraints">

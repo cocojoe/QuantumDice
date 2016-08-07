@@ -70,24 +70,15 @@ class ViewController: UIViewController {
         buttonArray.append(buttonDice5)
         buttonArray.append(buttonDice6)
         
-        // Additional button setup
+        // Manual font fixing
         for dice in buttonArray {
             
-            // Set dice image
-            let diceImage = UIImage(named: "\(dice.base)")?.imageWithRenderingMode(.AlwaysOriginal)
-            dice.setBackgroundImage(diceImage, forState: .Normal)
-            dice.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
-            
-            // Setup dice button font, builder max too small
-            let maxScaleFont = dice.titleLabel?.font.fontWithSize(Constants.Font.superSize)
-            dice.titleLabel?.font = maxScaleFont
-            
-            // Adjust scale down to fit resolution
-            dice.titleLabel?.adjustsFontSizeToFitWidth = true
-            dice.titleLabel?.baselineAdjustment = .AlignCenters
-            dice.titleLabel?.minimumScaleFactor = 0.10
+            /* Manual font size adjustment, size of dice max value */
+            let fontSize = Constants.Font.defaultPointSize * (self.view.frame.size.width/320.0);
+            let minScaleFont = dice.titleLabel?.font.fontWithSize(fontSize)
+            dice.titleLabel?.font = minScaleFont
         }
-        
+
     }
     
     func setupSkin() {
@@ -102,22 +93,7 @@ class ViewController: UIViewController {
         
         // Reset Dice
         for dice in buttonArray {
-            
-            if dice.base == Dice.d0 {
-                dice.setTitle("", forState: .Normal)
-            } else {
-                dice.setTitle("\(dice.base.rawValue)", forState: .Normal)
-            }
-        }
-        
-        // Manual font fixing
-        for dice in buttonArray {
-            
-            /* Manual font size adjustment, size of dice max value */
-            let fontSize = dice.titleLabel?.actualFontSize()
-            print("\(dice.titleLabel?.font.pointSize),\(fontSize)")
-            //let minScaleFont = dice.titleLabel?.font.fontWithSize(fontSize!)
-            //dice.titleLabel?.font = minScaleFont
+            dice.resetLabel()
         }
         
         // Stock RNG
@@ -127,7 +103,11 @@ class ViewController: UIViewController {
     @IBAction func rollDice(sender: DiceButton) {
         // Roll & update dice button
         
-        if sender.base == Dice.d0 { return }
+        if sender.base == Dice.d0 {
+            // MARK: Selection mechanic
+            sender.base = Dice.d3
+            return
+        }
         
         guard let random = randomNumberGenerator.nextNumberInBase(sender.base) else {
             // Empty dice display on nil result

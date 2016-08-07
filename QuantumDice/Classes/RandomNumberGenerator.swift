@@ -9,10 +9,6 @@
 import Foundation
 import SwiftyJSON
 
-enum Dice:UInt8 {
-    case d0 = 0, d2 = 2, d3 = 3, d4 = 4, d6 = 6, d8 = 8, d10 = 10, d12 = 12, d20 = 20, d100 = 100
-}
-
 enum Status {
     case empty, charging, charged, error
 }
@@ -58,7 +54,7 @@ class RandomNumberGenerator {
         status = Status.charged
     }
     
-    func nextNumberInBase(base: Dice) -> UInt8? {
+    func nextNumberInBase(base: Dice) -> Int? {
         // Convert number from block to appropriate base range
         
         guard let nextNumber = quantumBlock.popLast() else {
@@ -66,12 +62,12 @@ class RandomNumberGenerator {
             return nil
         }
         
-        let ratio = Float(base.rawValue) / Float(UInt8.max)
-        let random = UInt8( floor(Float(nextNumber) * ratio) ) + 1
-        
-        print("\(nextNumber), Base: \(base), Random: \(random)")
+        // Range conversion
+        let random = convertRange(baseMin: 0.0,baseMax: Double(UInt8.max), limitMin: 1.0, limitMax: Double(base.rawValue), value: Double(nextNumber))
+        let randomInt = Int(round(random))
+        print("Method1: \(nextNumber), Base: \(base), Random: \(random), RandomInt: \(randomInt)")
 
-        return random
+        return randomInt
         
     }
 }
