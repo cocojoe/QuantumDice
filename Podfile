@@ -11,6 +11,7 @@ target 'QuantumDice' do
   pod 'SwiftyJSON'
   pod 'SwiftSpinner'
   pod 'LTMorphingLabel'
+  pod 'UIPicker'
 
   target 'QuantumDiceTests' do
     inherit! :search_paths

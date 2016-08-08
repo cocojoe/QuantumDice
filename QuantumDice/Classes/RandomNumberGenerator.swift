@@ -13,7 +13,14 @@ enum Status {
     case empty, charging, charged, error
 }
 
+enum Dice:Int {
+    case dSelect = -1, d0 = 0, d2 = 2, d3 = 3, d4 = 4, d6 = 6, d8 = 8, d10 = 10, d12 = 12, d20 = 20, d100 = 100
+}
+
 class RandomNumberGenerator {
+    
+    /* Singleton */
+    static let sharedInstance = RandomNumberGenerator()
     
     // Cache quantum block
     var quantumBlock:[UInt8] = []
@@ -22,6 +29,10 @@ class RandomNumberGenerator {
         didSet {
             delegate?.didChangeStatus(status)
         }
+    }
+    
+    private init() {
+        arc4random_stir()
     }
     
     func refreshQuantumBlock() {
@@ -44,8 +55,24 @@ class RandomNumberGenerator {
         }
     }
     
+    func emergencyFallBack() {
+        // Generate random, store in array
+        
+        quantumBlock.removeAll()
+        
+        for _ in 0...Constants.Quantum.block {
+            let random = arc4random_uniform(256)
+            print(random)
+            quantumBlock.append(UInt8(random))
+        }
+        
+        status = Status.charged
+    }
+    
     func populateQuantumBlock(quantumJSON: JSON) {
         // Parse JSON, extract numbers, store in array
+        
+        quantumBlock.removeAll()
         
         for number in quantumJSON["data"].arrayValue {
             quantumBlock.append(number.uInt8Value)

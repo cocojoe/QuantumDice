@@ -11,16 +11,22 @@ import ChameleonFramework
 struct Constants {
     struct Quantum {
         static let domain = "qrng.anu.edu.au"
-        static let block  = 60
+        static let block  = 100
         static let type   = "uint8"
+        static let timeout = 6.0
     }
     
     struct Skin {
-        static let backgroundColor = FlatBlue()
-        static let diceColor = FlatSkyBlue()
+        static let backgroundColor = FlatSkyBlueDark()
+        static let diceColor = FlatYellow()
     }
     
     struct Font {
-        static let defaultPointSize:CGFloat = 64.0
+        static let defaultPointSize:CGFloat = 60
+        static let defaultSelectorPointSize:CGFloat = 32
+    }
+    
+    struct Dice {
+        static let closeTimer = 1.5
     }
 }

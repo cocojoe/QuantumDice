@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIPicker
 
 func print(items: Any..., separator: String = " ", terminator: String = "\n") {
     #if DEBUG

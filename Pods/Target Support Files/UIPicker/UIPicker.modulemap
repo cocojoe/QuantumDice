@@ -1,0 +1,6 @@
+framework module UIPicker {
+  umbrella header "UIPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

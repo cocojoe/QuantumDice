@@ -29,6 +29,7 @@ class NetworkManager {
         
         // Setup custom manager
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.timeoutIntervalForResource = Constants.Quantum.timeout
         
         manager = Alamofire.Manager(configuration: configuration, serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies))
     }

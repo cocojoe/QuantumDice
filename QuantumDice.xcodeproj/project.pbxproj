@@ -19,7 +19,8 @@
 		5B7CBB371D52088C00236796 /* QuantumDiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CBB361D52088C00236796 /* QuantumDiceUITests.swift */; };
 		5B7CBB481D52091B00236796 /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CBB471D52091B00236796 /* RandomNumberGenerator.swift */; };
 		5B7CBB4A1D52093300236796 /* RandomNumberGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CBB491D52093300236796 /* RandomNumberGeneratorTests.swift */; };
-		5BE77DD21D53C96100F8972A /* DiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE77DD11D53C96100F8972A /* DiceButton.swift */; };
+		5BE77DD71D57C22300F8972A /* DiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE77DD61D57C22300F8972A /* DiceView.xib */; };
+		5BE77DD91D57C2AF00F8972A /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE77DD81D57C2AF00F8972A /* DiceView.swift */; };
 		B865053960906FEC7E619B16 /* Pods_QuantumDice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC32C0F8F36A3BA9A3520ED /* Pods_QuantumDice.framework */; };
 		C6B47E9F29E7F803DF103DD8 /* Pods_QuantumDiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C121A17AC79E938E4DF52EB /* Pods_QuantumDiceTests.framework */; };
 		E25EA06A929517839762081B /* Pods_QuantumDiceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F59227194468ABFE0E0F35 /* Pods_QuantumDiceUITests.framework */; };
@@ -67,7 +68,8 @@
 		5B7CBB381D52088C00236796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7CBB471D52091B00236796 /* RandomNumberGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNumberGenerator.swift; sourceTree = "<group>"; };
 		5B7CBB491D52093300236796 /* RandomNumberGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNumberGeneratorTests.swift; sourceTree = "<group>"; };
-		5BE77DD11D53C96100F8972A /* DiceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceButton.swift; sourceTree = "<group>"; };
+		5BE77DD61D57C22300F8972A /* DiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DiceView.xib; path = XIB/DiceView.xib; sourceTree = "<group>"; };
+		5BE77DD81D57C2AF00F8972A /* DiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
 		702ADCECE946832EF1FD6ABE /* Pods-QuantumDiceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantumDiceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuantumDiceUITests/Pods-QuantumDiceUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AEC32C0F8F36A3BA9A3520ED /* Pods_QuantumDice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuantumDice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08475F60336F08206013764 /* Pods-QuantumDiceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantumDiceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuantumDiceTests/Pods-QuantumDiceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,12 +133,12 @@
 				5B258B741D521339004B58CD /* Constants.swift */,
 				5B258B761D5220A3004B58CD /* Extensions.swift */,
 				5B7CBB461D52091B00236796 /* Classes */,
+				5BE77DD51D57C1F000F8972A /* UI Builder */,
 				5B7CBB161D52088C00236796 /* AppDelegate.swift */,
 				5B7CBB181D52088C00236796 /* ViewController.swift */,
-				5B7CBB1A1D52088C00236796 /* Main.storyboard */,
 				5B7CBB1D1D52088C00236796 /* Assets.xcassets */,
-				5B7CBB1F1D52088C00236796 /* LaunchScreen.storyboard */,
 				5B7CBB221D52088C00236796 /* Info.plist */,
+				5B7CBB1F1D52088C00236796 /* LaunchScreen.storyboard */,
 			);
 			path = QuantumDice;
 			sourceTree = "<group>";
@@ -164,9 +166,18 @@
 			children = (
 				5B7CBB471D52091B00236796 /* RandomNumberGenerator.swift */,
 				5B258B721D521296004B58CD /* NetworkManager.swift */,
-				5BE77DD11D53C96100F8972A /* DiceButton.swift */,
+				5BE77DD81D57C2AF00F8972A /* DiceView.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		5BE77DD51D57C1F000F8972A /* UI Builder */ = {
+			isa = PBXGroup;
+			children = (
+				5B7CBB1A1D52088C00236796 /* Main.storyboard */,
+				5BE77DD61D57C22300F8972A /* DiceView.xib */,
+			);
+			name = "UI Builder";
 			sourceTree = "<group>";
 		};
 		6192ECEC5C1DAF35F76DC5B1 /* Frameworks */ = {
@@ -308,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B7CBB211D52088C00236796 /* LaunchScreen.storyboard in Resources */,
+				5BE77DD71D57C22300F8972A /* DiceView.xib in Resources */,
 				5B7CBB1E1D52088C00236796 /* Assets.xcassets in Resources */,
 				5B7CBB1C1D52088C00236796 /* Main.storyboard in Resources */,
 			);
@@ -458,11 +470,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B258B751D521339004B58CD /* Constants.swift in Sources */,
+				5BE77DD91D57C2AF00F8972A /* DiceView.swift in Sources */,
 				5B258B771D5220A3004B58CD /* Extensions.swift in Sources */,
 				5B258B731D521296004B58CD /* NetworkManager.swift in Sources */,
 				5B7CBB191D52088C00236796 /* ViewController.swift in Sources */,
 				5B7CBB171D52088C00236796 /* AppDelegate.swift in Sources */,
-				5BE77DD21D53C96100F8972A /* DiceButton.swift in Sources */,
 				5B7CBB481D52091B00236796 /* RandomNumberGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

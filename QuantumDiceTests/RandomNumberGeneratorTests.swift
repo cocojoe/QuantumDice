@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class RandomNumberGeneratorTests: XCTestCase {
     
-    let RNG = RandomNumberGenerator()
+    let RNG = RandomNumberGenerator.sharedInstance
     let testBlockSize  = 10
     let JSONSampleGood = JSON.parse("{\"type\":\"uint8\",\"length\":10,\"data\":[197,202,139,42,209,125,69,103,93,99],\"success\":true}")
     let JSONSampleBad = JSON.parse("{\"type\":\"uint8\",\"length\":10,\"data\":[197,202,139,42,209,125,69,103,93],\"success\":true}")

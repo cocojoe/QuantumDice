@@ -12,16 +12,16 @@ import ChameleonFramework
 
 class ViewController: UIViewController {
     
-    var randomNumberGenerator = RandomNumberGenerator()
+    var randomNumberGenerator = RandomNumberGenerator.sharedInstance
     
-    @IBOutlet weak var buttonDice1: DiceButton!
-    @IBOutlet weak var buttonDice2: DiceButton!
-    @IBOutlet weak var buttonDice3: DiceButton!
-    @IBOutlet weak var buttonDice4: DiceButton!
-    @IBOutlet weak var buttonDice5: DiceButton!
-    @IBOutlet weak var buttonDice6: DiceButton!
+    @IBOutlet weak var diceView1: DiceView!
+    @IBOutlet weak var diceView2: DiceView!
+    @IBOutlet weak var diceView3: DiceView!
+    @IBOutlet weak var diceView4: DiceView!
+    @IBOutlet weak var diceView5: DiceView!
+    @IBOutlet weak var diceView6: DiceView!
     
-    var buttonArray:[DiceButton] = []
+    var diceArray:[DiceView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         // Assign delegate
         randomNumberGenerator.delegate = self
         
-        // Setup dice button default base
+        // Setup dice
         setupDice()
         
         // Add Colors
@@ -55,29 +55,20 @@ class ViewController: UIViewController {
     
     func setupDice() {
         // Setup dice button default base
-        buttonDice1.base = Dice.d20
-        buttonDice2.base = Dice.d12
-        buttonDice3.base = Dice.d10
-        buttonDice4.base = Dice.d0
-        buttonDice5.base = Dice.d0
-        buttonDice6.base = Dice.d0
+        diceView1.base = Dice.d20
+        diceView2.base = Dice.d12
+        diceView3.base = Dice.d0
+        diceView4.base = Dice.d0
+        diceView5.base = Dice.d0
+        diceView6.base = Dice.d0
         
-        // Add buttons to array
-        buttonArray.append(buttonDice1)
-        buttonArray.append(buttonDice2)
-        buttonArray.append(buttonDice3)
-        buttonArray.append(buttonDice4)
-        buttonArray.append(buttonDice5)
-        buttonArray.append(buttonDice6)
-        
-        // Manual font fixing
-        for dice in buttonArray {
-            
-            /* Manual font size adjustment, size of dice max value */
-            let fontSize = Constants.Font.defaultPointSize * (self.view.frame.size.width/320.0);
-            let minScaleFont = dice.titleLabel?.font.fontWithSize(fontSize)
-            dice.titleLabel?.font = minScaleFont
-        }
+        // Add dice to array
+        diceArray.append(diceView1)
+        diceArray.append(diceView2)
+        diceArray.append(diceView3)
+        diceArray.append(diceView4)
+        diceArray.append(diceView5)
+        diceArray.append(diceView6)
 
     }
     
@@ -91,30 +82,12 @@ class ViewController: UIViewController {
     
     func refreshView() {
         
-        // Reset Dice
-        for dice in buttonArray {
-            dice.resetLabel()
+        for dice in diceArray {
+            dice.resetDice()
         }
         
         // Stock RNG
         randomNumberGenerator.refreshQuantumBlock()
-    }
-    
-    @IBAction func rollDice(sender: DiceButton) {
-        // Roll & update dice button
-        
-        if sender.base == Dice.d0 {
-            // MARK: Selection mechanic
-            sender.base = Dice.d3
-            return
-        }
-        
-        guard let random = randomNumberGenerator.nextNumberInBase(sender.base) else {
-            // Empty dice display on nil result
-            return
-        }
-        
-        sender.setTitle(String(random), forState: .Normal)
     }
     
 }
@@ -133,6 +106,7 @@ extension ViewController : RandomNumberGeneratorDelegate {
             refreshView()
         case .error:
             // TODO: Handle data download retry loop
+            randomNumberGenerator.emergencyFallBack()
             break
         }
     }
