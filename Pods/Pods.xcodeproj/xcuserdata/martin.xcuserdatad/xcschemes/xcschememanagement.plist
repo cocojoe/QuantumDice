@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>LTMorphingLabel.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-QuantumDice.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -44,7 +39,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>UIPicker.xcscheme</key>
+		<key>SwiftyTimer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,22 +47,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>19D54069900EE4F2209DDCD49DCBF19E</key>
+		<key>20A950E7A1D3A622CAB782F9353039EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1C29CD207549F9C1679E8B24EF0D7910</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3C900E8E2449EBBCC12128A9BDA69E7F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4F80999ACEBA1B81C1394A2BB593950B</key>
+		<key>29DE034943C8ECC5C716F44B7C7E64C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C101BF11F7A5B23C3B210FD1298D52B7</key>
+		<key>FE9836F113AF735CDC46AB91AE63CD55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FFAFEC379B7BAA733D440277A915B22C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

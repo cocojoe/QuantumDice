@@ -19,6 +19,25 @@
 		5B7CBB371D52088C00236796 /* QuantumDiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CBB361D52088C00236796 /* QuantumDiceUITests.swift */; };
 		5B7CBB481D52091B00236796 /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CBB471D52091B00236796 /* RandomNumberGenerator.swift */; };
 		5B7CBB4A1D52093300236796 /* RandomNumberGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CBB491D52093300236796 /* RandomNumberGeneratorTests.swift */; };
+		5BAA77981D593CEA0020A41A /* UIPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA77951D593CEA0020A41A /* UIPicker.swift */; };
+		5BAA77991D593CEA0020A41A /* UIPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA77961D593CEA0020A41A /* UIPickerDelegate.swift */; };
+		5BAA77AE1D593D7D0020A41A /* LTCharacterDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA779B1D593D7D0020A41A /* LTCharacterDiffResult.swift */; };
+		5BAA77AF1D593D7D0020A41A /* LTCharacterLimbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA779C1D593D7D0020A41A /* LTCharacterLimbo.swift */; };
+		5BAA77B01D593D7D0020A41A /* LTEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA779D1D593D7D0020A41A /* LTEasing.swift */; };
+		5BAA77B11D593D7D0020A41A /* LTEmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA779E1D593D7D0020A41A /* LTEmitterView.swift */; };
+		5BAA77B21D593D7D0020A41A /* LTMorphingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA779F1D593D7D0020A41A /* LTMorphingEffect.swift */; };
+		5BAA77B31D593D7D0020A41A /* LTMorphingLabel+Anvil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA77A01D593D7D0020A41A /* LTMorphingLabel+Anvil.swift */; };
+		5BAA77B41D593D7D0020A41A /* LTMorphingLabel+Burn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA77A11D593D7D0020A41A /* LTMorphingLabel+Burn.swift */; };
+		5BAA77B51D593D7D0020A41A /* LTMorphingLabel+Evaporate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA77A21D593D7D0020A41A /* LTMorphingLabel+Evaporate.swift */; };
+		5BAA77B61D593D7D0020A41A /* LTMorphingLabel+Fall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA77A31D593D7D0020A41A /* LTMorphingLabel+Fall.swift */; };
+		5BAA77B71D593D7D0020A41A /* LTMorphingLabel+Pixelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA77A41D593D7D0020A41A /* LTMorphingLabel+Pixelate.swift */; };
+		5BAA77B81D593D7D0020A41A /* LTMorphingLabel+Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA77A51D593D7D0020A41A /* LTMorphingLabel+Sparkle.swift */; };
+		5BAA77B91D593D7D0020A41A /* LTMorphingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA77A71D593D7D0020A41A /* LTMorphingLabel.swift */; };
+		5BAA77BA1D593D7D0020A41A /* LTStringDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA77A81D593D7D0020A41A /* LTStringDiffResult.swift */; };
+		5BAA77BB1D593D7D0020A41A /* Fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BAA77AA1D593D7D0020A41A /* Fire.png */; };
+		5BAA77BC1D593D7D0020A41A /* Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BAA77AB1D593D7D0020A41A /* Fragment.png */; };
+		5BAA77BD1D593D7D0020A41A /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BAA77AC1D593D7D0020A41A /* Smoke.png */; };
+		5BAA77BE1D593D7D0020A41A /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BAA77AD1D593D7D0020A41A /* Sparkle.png */; };
 		5BE77DD71D57C22300F8972A /* DiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE77DD61D57C22300F8972A /* DiceView.xib */; };
 		5BE77DD91D57C2AF00F8972A /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE77DD81D57C2AF00F8972A /* DiceView.swift */; };
 		B865053960906FEC7E619B16 /* Pods_QuantumDice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC32C0F8F36A3BA9A3520ED /* Pods_QuantumDice.framework */; };
@@ -68,6 +87,26 @@
 		5B7CBB381D52088C00236796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7CBB471D52091B00236796 /* RandomNumberGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNumberGenerator.swift; sourceTree = "<group>"; };
 		5B7CBB491D52093300236796 /* RandomNumberGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNumberGeneratorTests.swift; sourceTree = "<group>"; };
+		5BAA77951D593CEA0020A41A /* UIPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPicker.swift; sourceTree = "<group>"; };
+		5BAA77961D593CEA0020A41A /* UIPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPickerDelegate.swift; sourceTree = "<group>"; };
+		5BAA779B1D593D7D0020A41A /* LTCharacterDiffResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTCharacterDiffResult.swift; sourceTree = "<group>"; };
+		5BAA779C1D593D7D0020A41A /* LTCharacterLimbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTCharacterLimbo.swift; sourceTree = "<group>"; };
+		5BAA779D1D593D7D0020A41A /* LTEasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTEasing.swift; sourceTree = "<group>"; };
+		5BAA779E1D593D7D0020A41A /* LTEmitterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTEmitterView.swift; sourceTree = "<group>"; };
+		5BAA779F1D593D7D0020A41A /* LTMorphingEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingEffect.swift; sourceTree = "<group>"; };
+		5BAA77A01D593D7D0020A41A /* LTMorphingLabel+Anvil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Anvil.swift"; sourceTree = "<group>"; };
+		5BAA77A11D593D7D0020A41A /* LTMorphingLabel+Burn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Burn.swift"; sourceTree = "<group>"; };
+		5BAA77A21D593D7D0020A41A /* LTMorphingLabel+Evaporate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Evaporate.swift"; sourceTree = "<group>"; };
+		5BAA77A31D593D7D0020A41A /* LTMorphingLabel+Fall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Fall.swift"; sourceTree = "<group>"; };
+		5BAA77A41D593D7D0020A41A /* LTMorphingLabel+Pixelate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Pixelate.swift"; sourceTree = "<group>"; };
+		5BAA77A51D593D7D0020A41A /* LTMorphingLabel+Sparkle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Sparkle.swift"; sourceTree = "<group>"; };
+		5BAA77A61D593D7D0020A41A /* LTMorphingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMorphingLabel.h; sourceTree = "<group>"; };
+		5BAA77A71D593D7D0020A41A /* LTMorphingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingLabel.swift; sourceTree = "<group>"; };
+		5BAA77A81D593D7D0020A41A /* LTStringDiffResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTStringDiffResult.swift; sourceTree = "<group>"; };
+		5BAA77AA1D593D7D0020A41A /* Fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fire.png; sourceTree = "<group>"; };
+		5BAA77AB1D593D7D0020A41A /* Fragment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fragment.png; sourceTree = "<group>"; };
+		5BAA77AC1D593D7D0020A41A /* Smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smoke.png; sourceTree = "<group>"; };
+		5BAA77AD1D593D7D0020A41A /* Sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle.png; sourceTree = "<group>"; };
 		5BE77DD61D57C22300F8972A /* DiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DiceView.xib; path = XIB/DiceView.xib; sourceTree = "<group>"; };
 		5BE77DD81D57C2AF00F8972A /* DiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
 		702ADCECE946832EF1FD6ABE /* Pods-QuantumDiceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuantumDiceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuantumDiceUITests/Pods-QuantumDiceUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +147,7 @@
 		5B7CBB0A1D52088C00236796 = {
 			isa = PBXGroup;
 			children = (
+				5BAA77921D593CEA0020A41A /* External */,
 				5B7CBB151D52088C00236796 /* QuantumDice */,
 				5B7CBB2A1D52088C00236796 /* QuantumDiceTests */,
 				5B7CBB351D52088C00236796 /* QuantumDiceUITests */,
@@ -169,6 +209,58 @@
 				5BE77DD81D57C2AF00F8972A /* DiceView.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		5BAA77921D593CEA0020A41A /* External */ = {
+			isa = PBXGroup;
+			children = (
+				5BAA779A1D593D7D0020A41A /* LTMorphingLabel */,
+				5BAA77931D593CEA0020A41A /* UIPicker */,
+			);
+			name = External;
+			path = QuantumDice/External;
+			sourceTree = "<group>";
+		};
+		5BAA77931D593CEA0020A41A /* UIPicker */ = {
+			isa = PBXGroup;
+			children = (
+				5BAA77951D593CEA0020A41A /* UIPicker.swift */,
+				5BAA77961D593CEA0020A41A /* UIPickerDelegate.swift */,
+			);
+			path = UIPicker;
+			sourceTree = "<group>";
+		};
+		5BAA779A1D593D7D0020A41A /* LTMorphingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				5BAA779B1D593D7D0020A41A /* LTCharacterDiffResult.swift */,
+				5BAA779C1D593D7D0020A41A /* LTCharacterLimbo.swift */,
+				5BAA779D1D593D7D0020A41A /* LTEasing.swift */,
+				5BAA779E1D593D7D0020A41A /* LTEmitterView.swift */,
+				5BAA779F1D593D7D0020A41A /* LTMorphingEffect.swift */,
+				5BAA77A01D593D7D0020A41A /* LTMorphingLabel+Anvil.swift */,
+				5BAA77A11D593D7D0020A41A /* LTMorphingLabel+Burn.swift */,
+				5BAA77A21D593D7D0020A41A /* LTMorphingLabel+Evaporate.swift */,
+				5BAA77A31D593D7D0020A41A /* LTMorphingLabel+Fall.swift */,
+				5BAA77A41D593D7D0020A41A /* LTMorphingLabel+Pixelate.swift */,
+				5BAA77A51D593D7D0020A41A /* LTMorphingLabel+Sparkle.swift */,
+				5BAA77A61D593D7D0020A41A /* LTMorphingLabel.h */,
+				5BAA77A71D593D7D0020A41A /* LTMorphingLabel.swift */,
+				5BAA77A81D593D7D0020A41A /* LTStringDiffResult.swift */,
+				5BAA77A91D593D7D0020A41A /* Particles */,
+			);
+			path = LTMorphingLabel;
+			sourceTree = "<group>";
+		};
+		5BAA77A91D593D7D0020A41A /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				5BAA77AA1D593D7D0020A41A /* Fire.png */,
+				5BAA77AB1D593D7D0020A41A /* Fragment.png */,
+				5BAA77AC1D593D7D0020A41A /* Smoke.png */,
+				5BAA77AD1D593D7D0020A41A /* Sparkle.png */,
+			);
+			path = Particles;
 			sourceTree = "<group>";
 		};
 		5BE77DD51D57C1F000F8972A /* UI Builder */ = {
@@ -318,9 +410,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAA77BE1D593D7D0020A41A /* Sparkle.png in Resources */,
 				5B7CBB211D52088C00236796 /* LaunchScreen.storyboard in Resources */,
+				5BAA77BC1D593D7D0020A41A /* Fragment.png in Resources */,
 				5BE77DD71D57C22300F8972A /* DiceView.xib in Resources */,
+				5BAA77BB1D593D7D0020A41A /* Fire.png in Resources */,
 				5B7CBB1E1D52088C00236796 /* Assets.xcassets in Resources */,
+				5BAA77BD1D593D7D0020A41A /* Smoke.png in Resources */,
 				5B7CBB1C1D52088C00236796 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,13 +565,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAA77B21D593D7D0020A41A /* LTMorphingEffect.swift in Sources */,
+				5BAA77B91D593D7D0020A41A /* LTMorphingLabel.swift in Sources */,
+				5BAA77AF1D593D7D0020A41A /* LTCharacterLimbo.swift in Sources */,
+				5BAA77B51D593D7D0020A41A /* LTMorphingLabel+Evaporate.swift in Sources */,
 				5B258B751D521339004B58CD /* Constants.swift in Sources */,
 				5BE77DD91D57C2AF00F8972A /* DiceView.swift in Sources */,
+				5BAA77BA1D593D7D0020A41A /* LTStringDiffResult.swift in Sources */,
 				5B258B771D5220A3004B58CD /* Extensions.swift in Sources */,
+				5BAA77AE1D593D7D0020A41A /* LTCharacterDiffResult.swift in Sources */,
+				5BAA77B61D593D7D0020A41A /* LTMorphingLabel+Fall.swift in Sources */,
 				5B258B731D521296004B58CD /* NetworkManager.swift in Sources */,
+				5BAA77991D593CEA0020A41A /* UIPickerDelegate.swift in Sources */,
+				5BAA77B11D593D7D0020A41A /* LTEmitterView.swift in Sources */,
 				5B7CBB191D52088C00236796 /* ViewController.swift in Sources */,
+				5BAA77B01D593D7D0020A41A /* LTEasing.swift in Sources */,
+				5BAA77B81D593D7D0020A41A /* LTMorphingLabel+Sparkle.swift in Sources */,
+				5BAA77B71D593D7D0020A41A /* LTMorphingLabel+Pixelate.swift in Sources */,
+				5BAA77B41D593D7D0020A41A /* LTMorphingLabel+Burn.swift in Sources */,
+				5BAA77981D593CEA0020A41A /* UIPicker.swift in Sources */,
 				5B7CBB171D52088C00236796 /* AppDelegate.swift in Sources */,
 				5B7CBB481D52091B00236796 /* RandomNumberGenerator.swift in Sources */,
+				5BAA77B31D593D7D0020A41A /* LTMorphingLabel+Anvil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

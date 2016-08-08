@@ -19,7 +19,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d100" translatesAutoresizingMaskIntoConstraints="NO" id="cJF-XL-0Hz" userLabel="backgroundImage">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1Ep-Kz-XR3" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1Ep-Kz-XR3" customClass="LTMorphingLabel" customModule="QuantumDice" customModuleProvider="target">
                     <rect key="frame" x="281.5" y="262" width="38" height="76.5"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="60"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

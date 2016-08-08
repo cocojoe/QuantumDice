@@ -10,8 +10,7 @@ target 'QuantumDice' do
   pod 'ChameleonFramework/Swift'
   pod 'SwiftyJSON'
   pod 'SwiftSpinner'
-  pod 'LTMorphingLabel'
-  pod 'UIPicker'
+  pod 'SwiftyTimer'
 
   target 'QuantumDiceTests' do
     inherit! :search_paths

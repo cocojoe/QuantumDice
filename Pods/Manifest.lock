@@ -3,27 +3,24 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - LTMorphingLabel (0.2.1)
   - SwiftSpinner (0.9.5)
   - SwiftyJSON (2.3.2)
-  - UIPicker (0.0.1)
+  - SwiftyTimer (1.4.0)
 
 DEPENDENCIES:
   - Alamofire
   - ChameleonFramework/Swift
-  - LTMorphingLabel
   - SwiftSpinner
   - SwiftyJSON
-  - UIPicker
+  - SwiftyTimer
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  LTMorphingLabel: 1858358ea38ef4d548e1f58b648b0d08ec3a62ed
   SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
-  UIPicker: d7617af0613b338e57f0ecc8108bbbb4c6261312
+  SwiftyTimer: db4458cfaf67fc71e16ad6e4637c60b86f76a649
 
-PODFILE CHECKSUM: 2d18faaf4493900fd53600b2f738fcde1aff8a79
+PODFILE CHECKSUM: 9215c5b1a61d7a6c5f0ed521d14879580adc7afd
 
 COCOAPODS: 1.0.0

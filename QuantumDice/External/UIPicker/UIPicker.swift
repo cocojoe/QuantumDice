@@ -25,9 +25,7 @@ public class UIPicker: UIPickerView, UIPickerViewDataSource, UIPickerViewDelegat
         return 1
     }
     
-    
     public func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
         return optionList.count
     }
     
@@ -39,7 +37,8 @@ public class UIPicker: UIPickerView, UIPickerViewDataSource, UIPickerViewDelegat
         pickerDelegate?.selectedOption(optionList[row])
     }
     
-    public func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
+    
+    public func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
         
         var pickerLabel = view as? UILabel;
         
@@ -56,6 +55,7 @@ public class UIPicker: UIPickerView, UIPickerViewDataSource, UIPickerViewDelegat
         
         return pickerLabel!;
     }
+    
     
 }
 

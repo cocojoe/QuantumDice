@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import LTMorphingLabel
-import UIPicker
+import SwiftyTimer
 
 class DiceView: UIView {
     
@@ -18,8 +17,7 @@ class DiceView: UIView {
     var pickerTapGesture:UITapGestureRecognizer!
     var optionBase:Dice = Dice.dSelect
     
-    var startTimer:CFAbsoluteTime = 0
-    var endTimer:CFAbsoluteTime = 0
+    var holdTimer:NSTimer? = nil
     
     var base:Dice = Dice.d20 {
         didSet {
@@ -43,6 +41,7 @@ class DiceView: UIView {
         // Color / Morphing
         label.textColor = UIColor(contrastingBlackOrWhiteColorOn:Constants.Skin.backgroundColor, isFlat:true)
         label.morphingEffect = LTMorphingEffect.Sparkle
+        label.morphingEnabled = false
         
         pickerTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.pickerSelected(_:)))
         pickerTapGesture.delegate = self
@@ -50,8 +49,15 @@ class DiceView: UIView {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        startTimer = CFAbsoluteTimeGetCurrent()
+        backgroundImage.highlighted = true
         
+        // Hold down dice timer action
+        holdTimer = NSTimer.after(1.5.seconds) { [ unowned self] in
+            self.showPicker()
+            self.holdTimer?.invalidate()
+        }
+        
+        // Immediate action on d0
         if (base == Dice.d0) {
             showPicker()
             return
@@ -61,14 +67,11 @@ class DiceView: UIView {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         // Roll dice
         
-        endTimer = CFAbsoluteTimeGetCurrent()
-        let heldTime = endTimer - startTimer
+        // Cancel touch active actions
+        backgroundImage.highlighted = false
+        holdTimer?.invalidate()
         
-        if (heldTime >= Constants.Dice.closeTimer) {
-            showPicker()
-            return
-        }
-        
+        // Ignore d0
         if (base == Dice.d0) { return }
         
         // Random number
@@ -80,6 +83,7 @@ class DiceView: UIView {
         }
         
         // Display random number
+        label.morphingEnabled = true
         label.alpha = 1.0
         label.text = String(random)
     }
@@ -88,9 +92,14 @@ class DiceView: UIView {
         
         // Setup background image
         let diceImage = UIImage(named: "\(base)")?.imageWithRenderingMode(.AlwaysOriginal)
-        let colorImage = tintedImageWithColor(Constants.Skin.diceColor, image:diceImage!)
+        var colorImage = tintedImageWithColor(Constants.Skin.diceColor, image:diceImage!)
         backgroundImage.image = colorImage
         backgroundImage.contentMode = .ScaleAspectFit
+        
+        // Setup background image
+        colorImage = tintedImageWithColor(Constants.Skin.diceColorHighlight, image:diceImage!)
+        backgroundImage.highlightedImage = colorImage
+        backgroundImage.highlighted = false
         
         // Disable look d0
         if base == Dice.d0 {
@@ -102,6 +111,9 @@ class DiceView: UIView {
     
     func showPicker() {
         // Dice picker
+        
+        // Ensure selection dice
+        base = Dice.d0
         
         // Options
         let optionsArray = ["d100", "d20", "d12","d10", "d8", "d6", "d4" , "d3", "d2", "None"]
@@ -130,15 +142,16 @@ class DiceView: UIView {
     
     func resetDice() {
         
+        // Disable look
+        label.morphingEnabled = false
+        label.alpha = 0.5
+        
         // Label
         if base.rawValue <= Dice.d0.rawValue {
             label.text = ""
         } else {
             label.text = String(base.rawValue)
         }
-        
-        // Disable look
-        label.alpha = 0.5
     }
 }
 

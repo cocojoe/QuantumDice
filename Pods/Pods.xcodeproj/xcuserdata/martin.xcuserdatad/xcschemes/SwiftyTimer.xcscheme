@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3C900E8E2449EBBCC12128A9BDA69E7F'
-               BlueprintName = 'LTMorphingLabel'
+               BlueprintIdentifier = 'FE9836F113AF735CDC46AB91AE63CD55'
+               BlueprintName = 'SwiftyTimer'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'LTMorphingLabel.framework'>
+               BuildableName = 'SwiftyTimer.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

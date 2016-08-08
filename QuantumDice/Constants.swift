@@ -19,6 +19,7 @@ struct Constants {
     struct Skin {
         static let backgroundColor = FlatSkyBlueDark()
         static let diceColor = FlatYellow()
+        static let diceColorHighlight = FlatYellowDark()
     }
     
     struct Font {
