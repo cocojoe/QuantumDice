@@ -25,6 +25,7 @@ struct Constants {
     struct Font {
         static let defaultPointSize:CGFloat = 60
         static let defaultSelectorPointSize:CGFloat = 32
+        static let defaultIdleAlpha:CGFloat = 0.75
     }
     
     struct Dice {

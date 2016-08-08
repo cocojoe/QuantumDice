@@ -40,7 +40,7 @@ class DiceView: UIView {
         
         // Color / Morphing
         label.textColor = UIColor(contrastingBlackOrWhiteColorOn:Constants.Skin.backgroundColor, isFlat:true)
-        label.morphingEffect = LTMorphingEffect.Sparkle
+        label.morphingEffect = LTMorphingEffect.Burn
         label.morphingEnabled = false
         
         pickerTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.pickerSelected(_:)))
@@ -77,7 +77,7 @@ class DiceView: UIView {
         // Random number
         guard let random = RandomNumberGenerator.sharedInstance.nextNumberInBase(base) else {
             // Empty dice display on nil result
-            label.alpha = 0.5
+            label.alpha = Constants.Font.defaultIdleAlpha
             label.text = String(base)
             return
         }
@@ -100,13 +100,6 @@ class DiceView: UIView {
         colorImage = tintedImageWithColor(Constants.Skin.diceColorHighlight, image:diceImage!)
         backgroundImage.highlightedImage = colorImage
         backgroundImage.highlighted = false
-        
-        // Disable look d0
-        if base == Dice.d0 {
-            backgroundImage.alpha = 0.5
-        } else {
-            backgroundImage.alpha = 1.0
-        }
     }
     
     func showPicker() {
@@ -144,7 +137,7 @@ class DiceView: UIView {
         
         // Disable look
         label.morphingEnabled = false
-        label.alpha = 0.5
+        label.alpha = Constants.Font.defaultIdleAlpha
         
         // Label
         if base.rawValue <= Dice.d0.rawValue {
