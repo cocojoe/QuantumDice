@@ -62,7 +62,6 @@ class RandomNumberGenerator {
         
         for _ in 0...Constants.Quantum.block {
             let random = arc4random_uniform(256)
-            print(random)
             quantumBlock.append(UInt8(random))
         }
         

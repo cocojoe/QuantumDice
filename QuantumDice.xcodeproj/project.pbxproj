@@ -373,7 +373,7 @@
 				TargetAttributes = {
 					5B7CBB121D52088C00236796 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = BDSJ8U6W85;
+						DevelopmentTeam = 2NUJ273DRF;
 					};
 					5B7CBB261D52088C00236796 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -735,7 +735,7 @@
 				INFOPLIST_FILE = QuantumDice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cocojoe.QuantumDice;
+				PRODUCT_BUNDLE_IDENTIFIER = com.frostycube.quantumdice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -749,7 +749,7 @@
 				INFOPLIST_FILE = QuantumDice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cocojoe.QuantumDice;
+				PRODUCT_BUNDLE_IDENTIFIER = com.frostycube.quantumdice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

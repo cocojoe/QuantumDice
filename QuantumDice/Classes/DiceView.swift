@@ -14,6 +14,8 @@ class DiceView: UIView {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var label: LTMorphingLabel!
     
+    var labelVerticalConstraint: NSLayoutConstraint!
+    
     var pickerTapGesture:UITapGestureRecognizer!
     var optionBase:Dice = Dice.dSelect
     
@@ -40,11 +42,17 @@ class DiceView: UIView {
         
         // Color / Morphing
         label.textColor = UIColor(contrastingBlackOrWhiteColorOn:Constants.Skin.backgroundColor, isFlat:true)
-        label.morphingEffect = LTMorphingEffect.Burn
+        label.morphingEffect = LTMorphingEffect.Sparkle
         label.morphingEnabled = false
         
         pickerTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.pickerSelected(_:)))
         pickerTapGesture.delegate = self
+        
+        // Add label vertical constraints
+        labelVerticalConstraint = NSLayoutConstraint(item: label, attribute: NSLayoutAttribute.Baseline , relatedBy: NSLayoutRelation.Equal, toItem: backgroundImage, attribute: NSLayoutAttribute.Baseline, multiplier: Constants.Dice.defaultLabelMultiplier, constant: 0.0)
+        
+        addConstraint(labelVerticalConstraint)
+        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -53,7 +61,7 @@ class DiceView: UIView {
         
         // Hold down dice timer action
         holdTimer = NSTimer.after(1.5.seconds) { [ unowned self] in
-            self.showPicker()
+            self.base = Dice.d0
             self.holdTimer?.invalidate()
         }
         
@@ -100,6 +108,10 @@ class DiceView: UIView {
         colorImage = tintedImageWithColor(Constants.Skin.diceColorHighlight, image:diceImage!)
         backgroundImage.highlightedImage = colorImage
         backgroundImage.highlighted = false
+        
+        print(labelVerticalConstraint)
+        
+        //First Label // Second background, multiplier 0.65 , constant 0
     }
     
     func showPicker() {

@@ -29,6 +29,7 @@ struct Constants {
     }
     
     struct Dice {
-        static let closeTimer = 1.5
+        static let closeTimer = 0.8
+        static let defaultLabelMultiplier:CGFloat = 0.65
     }
 }
