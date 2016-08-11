@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Flurry-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-QuantumDice.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,12 +57,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>18D64ADD0E0F16EC381C61140869FA01</key>
+		<key>1456935525ECAED069966AFB7F335CC3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5ED011A22DDB9F8EE032C7458B2B79B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>63032474C4AB56D648B39982530DFD55</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7F60D15FD107D701F5F31D6E8AC7B169</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>9422754C9464B84D03723AD74C07325D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B077680C5607A66810BB64EF3A30D612</key>
+		<key>BC868833D689F1FAB8F99E78B7DBD272</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ECEA2D23356F015EA78EA7E2C2BEDB4C</key>
+		<key>D41A43B2BEB3141A96599D80C01774B3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

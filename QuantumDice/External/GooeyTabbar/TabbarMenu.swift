@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Flurry_iOS_SDK
 
 class TabbarMenu: UIView{
     
@@ -106,6 +107,7 @@ class TabbarMenu: UIView{
          *  展开
          */
         if !opened {
+            Flurry.logEvent("Menu");
             opened = true
             startAnimation()
             UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: { () -> Void in

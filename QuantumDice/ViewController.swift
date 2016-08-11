@@ -9,6 +9,7 @@
 import UIKit
 import SwiftSpinner
 import ChameleonFramework
+import Flurry_iOS_SDK
 
 class ViewController: UIViewController {
     
@@ -96,6 +97,8 @@ class ViewController: UIViewController {
     // MARK: Shake support
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
+            Flurry.logEvent("Shake");
+            
             for dice in diceArray {
                 dice.rollDice()
             }

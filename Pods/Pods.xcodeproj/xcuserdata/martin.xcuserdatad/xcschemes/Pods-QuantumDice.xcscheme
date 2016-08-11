@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B077680C5607A66810BB64EF3A30D612"
+               BlueprintIdentifier = "BC868833D689F1FAB8F99E78B7DBD272"
                BuildableName = "Pods_QuantumDice.framework"
                BlueprintName = "Pods-QuantumDice"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B077680C5607A66810BB64EF3A30D612"
+            BlueprintIdentifier = "BC868833D689F1FAB8F99E78B7DBD272"
             BuildableName = "Pods_QuantumDice.framework"
             BlueprintName = "Pods-QuantumDice"
             ReferencedContainer = "container:Pods.xcodeproj">

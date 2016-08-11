@@ -8,6 +8,7 @@
 
 import UIKit
 import Armchair
+import Flurry_iOS_SDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Armchair.appID(Constants.AppStore.appID)
         Armchair.significantEventsUntilPrompt(Constants.AppStore.reviewEvents)
+        
+        Flurry.startSession(Constants.Analytics.FlurryKey);
         
         return true
     }

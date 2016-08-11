@@ -10,6 +10,7 @@ import UIKit
 import SwiftyTimer
 import AVFoundation
 import Armchair
+import Flurry_iOS_SDK
 
 class DiceView: UIView {
     
@@ -108,6 +109,10 @@ class DiceView: UIView {
             label.text = String(base.rawValue)
             return
         }
+        
+        // Analytics
+        let articleParams = ["Base": base.rawValue];
+        Flurry.logEvent("Dice Roll", withParameters: articleParams);
         
         // SFX
         audioPlayer?.play()

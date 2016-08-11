@@ -12,6 +12,7 @@ target 'QuantumDice' do
   pod 'SwiftSpinner'
   pod 'SwiftyTimer'
   pod 'Armchair'
+  pod 'Flurry-iOS-SDK/FlurrySDK'
 
   target 'QuantumDiceTests' do
     inherit! :search_paths

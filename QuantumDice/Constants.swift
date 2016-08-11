@@ -11,9 +11,9 @@ import ChameleonFramework
 struct Constants {
     struct Quantum {
         static let domain = "qrng.anu.edu.au"
-        static let block  = 100
+        static let block  = 120
         static let type   = "uint8"
-        static let timeout = 6.0
+        static let timeout = 7.0
     }
     
     struct Skin {
@@ -39,6 +39,10 @@ struct Constants {
     
     struct AppStore {
         static let appID = "1142986245"
-        static let reviewEvents:UInt = 30
+        static let reviewEvents:UInt = 60
+    }
+    
+    struct Analytics {
+        static let FlurryKey = "3XZB7CXZKQRV7CP67Q8C"
     }
 }
