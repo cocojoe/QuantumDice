@@ -11,8 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuantumDice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quantum_Dice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,10 +20,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TQL-BQ-Bg3">
-                                <rect key="frame" x="20" y="-80" width="240" height="760"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="TQL-BQ-Bg3">
+                                <rect key="frame" x="20" y="-74" width="240" height="748"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZ6-6u-wwj" customClass="DiceView" customModule="QuantumDice" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZ6-6u-wwj" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -36,8 +35,8 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3A-W0-U09" customClass="DiceView" customModule="QuantumDice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="260" width="240" height="240"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3A-W0-U09" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="254" width="240" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="g3A-W0-U09" secondAttribute="height" multiplier="1:1" id="WIX-E7-U0C"/>
@@ -48,8 +47,8 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJd-pw-I4S" customClass="DiceView" customModule="QuantumDice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="520" width="240" height="240"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJd-pw-I4S" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="508" width="240" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mJd-pw-I4S" secondAttribute="height" multiplier="1:1" id="Cdo-II-6dC"/>
@@ -69,10 +68,10 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4zk-yQ-PpZ">
-                                <rect key="frame" x="340" y="-80" width="240" height="760"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="4zk-yQ-PpZ">
+                                <rect key="frame" x="340" y="-74" width="240" height="748"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdG-et-oDV" customClass="DiceView" customModule="QuantumDice" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdG-et-oDV" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -84,8 +83,8 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSK-Ft-jaR" customClass="DiceView" customModule="QuantumDice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="260" width="240" height="240"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSK-Ft-jaR" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="254" width="240" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ZSK-Ft-jaR" secondAttribute="height" multiplier="1:1" id="eCJ-fp-6KK"/>
@@ -96,8 +95,8 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJ1-Bx-rU4" customClass="DiceView" customModule="QuantumDice" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="520" width="240" height="240"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJ1-Bx-rU4" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="508" width="240" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="WJ1-Bx-rU4" secondAttribute="height" multiplier="1:1" id="ZAo-X6-cut"/>
@@ -151,6 +150,7 @@
                         <outlet property="diceView6" destination="WJ1-Bx-rU4" id="T6B-1D-76a"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="172" y="273.75"/>
         </scene>

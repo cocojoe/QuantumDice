@@ -2,7 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "d2.pdf"
+      "filename" : "d2.pdf",
+      "scale" : "1x"
     }
   ],
   "info" : {

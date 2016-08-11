@@ -11,6 +11,7 @@ target 'QuantumDice' do
   pod 'SwiftyJSON'
   pod 'SwiftSpinner'
   pod 'SwiftyTimer'
+  pod 'Armchair'
 
   target 'QuantumDiceTests' do
     inherit! :search_paths

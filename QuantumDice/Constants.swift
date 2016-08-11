@@ -26,10 +26,14 @@ struct Constants {
         static let defaultPointSize:CGFloat = 60
         static let defaultSelectorPointSize:CGFloat = 32
         static let defaultIdleAlpha:CGFloat = 0.75
+        static let defaultFadeTime:Double = 0.2
     }
     
     struct Dice {
-        static let closeTimer = 0.8
-        static let defaultLabelMultiplier:CGFloat = 0.65
+        static let defaultLabelVerticalConstraintMultiplier:CGFloat = 0.65
+    }
+    
+    struct Bar {
+        static let defaultBarHeight:CGFloat = 32.0
     }
 }

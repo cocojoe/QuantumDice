@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     
     var diceArray:[DiceView] = []
     
+    var menu : TabbarMenu!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,6 +41,8 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        menu = TabbarMenu(tabbarHeight: Constants.Bar.defaultBarHeight)
         
         refreshView()
     }
@@ -69,7 +73,6 @@ class ViewController: UIViewController {
         diceArray.append(diceView4)
         diceArray.append(diceView5)
         diceArray.append(diceView6)
-
     }
     
     func setupSkin() {
@@ -90,6 +93,19 @@ class ViewController: UIViewController {
         randomNumberGenerator.refreshQuantumBlock()
     }
     
+    // MARK: Shake support
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            for dice in diceArray {
+                dice.rollDice()
+            }
+        }
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+
 }
 
 extension ViewController : RandomNumberGeneratorDelegate {

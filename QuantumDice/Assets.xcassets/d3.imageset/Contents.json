@@ -2,7 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "d3.pdf"
+      "filename" : "d3.pdf",
+      "scale" : "1x"
     }
   ],
   "info" : {

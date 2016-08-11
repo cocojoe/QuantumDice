@@ -8,13 +8,15 @@
 
 import UIKit
 import SwiftyTimer
+import AVFoundation
 
 class DiceView: UIView {
     
     @IBOutlet weak var backgroundImage: UIImageView!
-    @IBOutlet weak var label: LTMorphingLabel!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var miniLabel: UILabel!
     
-    var labelVerticalConstraint: NSLayoutConstraint!
+    var labelVerticalConstraint: NSLayoutConstraint?
     
     var pickerTapGesture:UITapGestureRecognizer!
     var optionBase:Dice = Dice.dSelect
@@ -27,6 +29,8 @@ class DiceView: UIView {
             resetDice()
         }
     }
+    
+    var audioPlayer:AVAudioPlayer?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -42,25 +46,30 @@ class DiceView: UIView {
         
         // Color / Morphing
         label.textColor = UIColor(contrastingBlackOrWhiteColorOn:Constants.Skin.backgroundColor, isFlat:true)
-        label.morphingEffect = LTMorphingEffect.Sparkle
-        label.morphingEnabled = false
         
         pickerTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.pickerSelected(_:)))
         pickerTapGesture.delegate = self
         
-        // Add label vertical constraints
-        labelVerticalConstraint = NSLayoutConstraint(item: label, attribute: NSLayoutAttribute.Baseline , relatedBy: NSLayoutRelation.Equal, toItem: backgroundImage, attribute: NSLayoutAttribute.Baseline, multiplier: Constants.Dice.defaultLabelMultiplier, constant: 0.0)
-        
-        addConstraint(labelVerticalConstraint)
+        // SFX
+        let sfx = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("dice_roll", ofType: "caf")!)
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOfURL:sfx)
+            audioPlayer?.prepareToPlay()
+        }catch {
+            print("SFX Load Failed")
+        }
+
         
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
+        // Highlight state
         backgroundImage.highlighted = true
+        backgroundImage.tintColor = Constants.Skin.diceColorHighlight
         
         // Hold down dice timer action
-        holdTimer = NSTimer.after(1.5.seconds) { [ unowned self] in
+        holdTimer = NSTimer.after(1.0.seconds) { [ unowned self] in
             self.base = Dice.d0
             self.holdTimer?.invalidate()
         }
@@ -73,45 +82,82 @@ class DiceView: UIView {
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        // Roll dice
-        
-        // Cancel touch active actions
+
+        // Cancel highlight state
         backgroundImage.highlighted = false
+        backgroundImage.tintColor = Constants.Skin.diceColor
         holdTimer?.invalidate()
         
-        // Ignore d0
+        // Ignore if no value dice
         if (base == Dice.d0) { return }
+        
+        rollDice()
+    }
+    
+    func rollDice() {
+        
+        if (base.rawValue <= Dice.d0.rawValue) { return }
         
         // Random number
         guard let random = RandomNumberGenerator.sharedInstance.nextNumberInBase(base) else {
+            
             // Empty dice display on nil result
-            label.alpha = Constants.Font.defaultIdleAlpha
-            label.text = String(base)
+            label.fadeViewTo(Constants.Font.defaultFadeTime, alpha: Constants.Font.defaultIdleAlpha)
+            label.text = String(base.rawValue)
             return
         }
         
-        // Display random number
-        label.morphingEnabled = true
-        label.alpha = 1.0
-        label.text = String(random)
+        // SFX
+        audioPlayer?.play()
+        
+        // Fade out label
+        label.fadeViewTo(Constants.Font.defaultFadeTime, alpha: 0.0)
+        
+        // Rotate view
+        self.rotateView { [unowned self] in
+            
+            // Display number / animate label
+            self.label.text = String(random)
+            self.label.fadeViewTo(0.3, alpha: 1.0)
+            
+            //self.label.scalePop()
+            self.scalePop()
+        }
+        
     }
     
     func setBackground(base: Dice) {
         
-        // Setup background image
-        let diceImage = UIImage(named: "\(base)")?.imageWithRenderingMode(.AlwaysOriginal)
-        var colorImage = tintedImageWithColor(Constants.Skin.diceColor, image:diceImage!)
-        backgroundImage.image = colorImage
+        // Setup background
+        let diceImage = UIImage(named: "\(base)")?.imageWithRenderingMode(.AlwaysTemplate)
+        backgroundImage.image = diceImage
+        backgroundImage.tintColor = Constants.Skin.diceColor
         backgroundImage.contentMode = .ScaleAspectFit
+        backgroundImage.scaleTo(1.00)
         
-        // Setup background image
-        colorImage = tintedImageWithColor(Constants.Skin.diceColorHighlight, image:diceImage!)
-        backgroundImage.highlightedImage = colorImage
-        backgroundImage.highlighted = false
+        // Set manual label vertical constraint
+        if let labelVerticalConstraint = labelVerticalConstraint {
+            removeConstraint(labelVerticalConstraint)
+        }
         
-        print(labelVerticalConstraint)
+        var multiplier = Constants.Dice.defaultLabelVerticalConstraintMultiplier
         
-        //First Label // Second background, multiplier 0.65 , constant 0
+        switch(base) {
+        case Dice.d10:
+            multiplier = 0.55
+        case Dice.d4:
+            multiplier = 0.75
+        case Dice.d0, Dice.dSelect, Dice.d100, Dice.d2:
+            backgroundImage.scaleTo(0.90)
+        case Dice.d6:
+            backgroundImage.scaleTo(0.85)
+        default:
+            break
+        }
+        
+        self.labelVerticalConstraint = NSLayoutConstraint(item: label, attribute: NSLayoutAttribute.Baseline , relatedBy: NSLayoutRelation.Equal, toItem: backgroundImage, attribute: NSLayoutAttribute.Baseline, multiplier: multiplier, constant: 0.0)
+        
+        addConstraint(self.labelVerticalConstraint!)
     }
     
     func showPicker() {
@@ -147,17 +193,18 @@ class DiceView: UIView {
     
     func resetDice() {
         
-        // Disable look
-        label.morphingEnabled = false
-        label.alpha = Constants.Font.defaultIdleAlpha
+        label.fadeViewTo(0.2, alpha: Constants.Font.defaultIdleAlpha)
         
         // Label
         if base.rawValue <= Dice.d0.rawValue {
             label.text = ""
+            miniLabel.text = ""
         } else {
             label.text = String(base.rawValue)
+            miniLabel.text = String(base.rawValue)
         }
     }
+    
 }
 
 extension DiceView: UIGestureRecognizerDelegate {
@@ -166,7 +213,6 @@ extension DiceView: UIGestureRecognizerDelegate {
     }
     
     func pickerSelected(sender:UITapGestureRecognizer) {
-        // TODO: Close picker, apply choice
         let pickerTapped = sender.view as! UIPicker
         
         // Remove picker
@@ -177,6 +223,8 @@ extension DiceView: UIGestureRecognizerDelegate {
         // Change Dice
         base = optionBase
     }
+    
+    
 }
 
 extension DiceView: UIPickerDelegate {
@@ -206,7 +254,5 @@ extension DiceView: UIPickerDelegate {
             optionBase = Dice.d0
             break
         }
-        
-        setBackground(optionBase)
     }
 }

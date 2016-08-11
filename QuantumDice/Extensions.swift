@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 func print(items: Any..., separator: String = " ", terminator: String = "\n") {
     #if DEBUG
@@ -14,24 +15,64 @@ func print(items: Any..., separator: String = " ", terminator: String = "\n") {
     #endif
 }
 
+// MARK: Number conversion
 func convertRange(baseMin baseMin: Double, baseMax: Double, limitMin: Double, limitMax: Double, value: Double) -> Double {
     return ((limitMax - limitMin) * (value - baseMin) / (baseMax - baseMin)) + limitMin;
 }
 
-func tintedImageWithColor(tintColor: UIColor, image: UIImage) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(image.size, false, UIScreen.mainScreen().scale)
-    let context: CGContextRef = UIGraphicsGetCurrentContext()!
-    CGContextTranslateCTM(context, 0, image.size.height)
-    CGContextScaleCTM(context, 1.0, -1.0)
-    let rect: CGRect = CGRectMake(0, 0, image.size.width, image.size.height)
-    // draw alpha-mask
-    CGContextSetBlendMode(context, CGBlendMode.Normal)
-    CGContextDrawImage(context, rect, image.CGImage)
-    // draw tint color, preserving alpha values of original image
-    CGContextSetBlendMode(context, CGBlendMode.SourceIn)
-    tintColor.setFill()
-    CGContextFillRect(context, rect)
-    let coloredImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return coloredImage
+// MARK: View Animations
+extension UIView {
+    
+    func rotateView(completionHandler: () -> Void ) {
+        
+        let direction: CGFloat = CGFloat.randomSign()
+        let duration = Double(CGFloat.random(min: 0.9, max: 1.3))
+        
+        self.transform = CGAffineTransformIdentity
+        
+        UIView.animateKeyframesWithDuration(duration, delay: 0.0, options: [.CalculationModePaced ], animations: {() -> Void in
+            UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.0, animations: {() -> Void in
+                self.transform = CGAffineTransformMakeRotation(CGFloat(M_PI) * 2.0 / 3.0 * direction)
+            })
+            UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.0, animations: {() -> Void in
+                self.transform = CGAffineTransformMakeRotation(CGFloat(M_PI) * 4.0 / 3.0 * direction)
+            })
+            UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.0, animations: {() -> Void in
+                self.transform = CGAffineTransformIdentity
+            })
+            }, completion: {(finished: Bool) -> Void in
+                completionHandler()
+        })
+    }
+    
+    func fadeViewTo(duration: Double, alpha: CGFloat) {
+        
+        UIView.animateWithDuration(duration, delay: 0.0, options: .CurveEaseIn, animations: { () -> Void in
+            self.alpha = alpha
+            }, completion: {(finished: Bool) -> Void in
+        })
+    }
+    
+    func scalePop() {
+        
+        UIView.animateWithDuration(0.2, animations: {
+            self.transform = CGAffineTransformMakeScale(1.10, 1.10)
+            }, completion: {(finished: Bool) -> Void in
+                
+                UIView.animateWithDuration(0.1, animations: {
+                    self.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                    }, completion: nil)
+                
+        })
+        
+    }
+    
+    func scaleTo(scale: CGFloat) {
+        
+        UIView.animateWithDuration(0.0, animations: {
+            self.transform = CGAffineTransformMakeScale(scale, scale)
+            }, completion: {(finished: Bool) -> Void in
+        })
+        
+    }
 }
