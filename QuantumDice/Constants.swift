@@ -36,4 +36,9 @@ struct Constants {
     struct Bar {
         static let defaultBarHeight:CGFloat = 32.0
     }
+    
+    struct AppStore {
+        static let appID = "1142986245"
+        static let reviewEvents:UInt = 30
+    }
 }

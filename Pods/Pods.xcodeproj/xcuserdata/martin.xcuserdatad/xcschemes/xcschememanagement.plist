@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Armchair.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ChameleonFramework.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +52,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>20A950E7A1D3A622CAB782F9353039EF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>29DE034943C8ECC5C716F44B7C7E64C0</key>
+		<key>18D64ADD0E0F16EC381C61140869FA01</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +72,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7F60D15FD107D701F5F31D6E8AC7B169</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9422754C9464B84D03723AD74C07325D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FE9836F113AF735CDC46AB91AE63CD55</key>
+		<key>B077680C5607A66810BB64EF3A30D612</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FFAFEC379B7BAA733D440277A915B22C</key>
+		<key>C80CF32D1DB28142A1F20135BDEAB66E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECEA2D23356F015EA78EA7E2C2BEDB4C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

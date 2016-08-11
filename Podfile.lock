@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (3.4.1)
+  - Armchair (0.1.2)
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
@@ -9,6 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Armchair
   - ChameleonFramework/Swift
   - SwiftSpinner
   - SwiftyJSON
@@ -16,11 +18,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Armchair: 10f49453001a25036e1dc8e74e4f1b699add562c
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   SwiftyTimer: db4458cfaf67fc71e16ad6e4637c60b86f76a649
 
-PODFILE CHECKSUM: 9215c5b1a61d7a6c5f0ed521d14879580adc7afd
+PODFILE CHECKSUM: d8ef4bfec81f5477bc27c3258abf2a717e3bce9c
 
 COCOAPODS: 1.0.0

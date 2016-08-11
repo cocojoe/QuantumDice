@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quantum_Dice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Roll_Initiative" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,7 +23,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="TQL-BQ-Bg3">
                                 <rect key="frame" x="20" y="-74" width="240" height="748"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZ6-6u-wwj" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZ6-6u-wwj" customClass="DiceView" customModule="Roll_Initiative" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -35,7 +35,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3A-W0-U09" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3A-W0-U09" customClass="DiceView" customModule="Roll_Initiative" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="254" width="240" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -47,7 +47,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJd-pw-I4S" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJd-pw-I4S" customClass="DiceView" customModule="Roll_Initiative" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="508" width="240" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -71,7 +71,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="4zk-yQ-PpZ">
                                 <rect key="frame" x="340" y="-74" width="240" height="748"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdG-et-oDV" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdG-et-oDV" customClass="DiceView" customModule="Roll_Initiative" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -83,7 +83,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSK-Ft-jaR" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSK-Ft-jaR" customClass="DiceView" customModule="Roll_Initiative" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="254" width="240" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -95,7 +95,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJ1-Bx-rU4" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WJ1-Bx-rU4" customClass="DiceView" customModule="Roll_Initiative" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="508" width="240" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>

@@ -6,7 +6,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiceView" customModule="Quantum_Dice" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiceView" customModule="Roll_Initiative" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundImage" destination="cJF-XL-0Hz" id="C0f-Pq-KLo"/>
                 <outlet property="label" destination="1Ep-Kz-XR3" id="tlB-WX-nBy"/>

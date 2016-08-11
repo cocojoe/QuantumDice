@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyTimer
 import AVFoundation
+import Armchair
 
 class DiceView: UIView {
     
@@ -36,7 +37,7 @@ class DiceView: UIView {
         super.init(coder: aDecoder)
         
         // Load XIB
-        let xibView = NSBundle.mainBundle().loadNibNamed("DiceView", owner: self, options: nil)[0] as! UIView
+        let xibView = NSBundle.mainBundle().loadNibNamed("DiceView", owner: self, options: nil).first as! UIView
         xibView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
         xibView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.addSubview(xibView)
@@ -92,6 +93,7 @@ class DiceView: UIView {
         if (base == Dice.d0) { return }
         
         rollDice()
+        Armchair.userDidSignificantEvent(true)
     }
     
     func rollDice() {
