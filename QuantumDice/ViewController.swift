@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-    
+        
     }
     
     func setupDice() {
@@ -105,7 +105,11 @@ class ViewController: UIViewController {
     override func canBecomeFirstResponder() -> Bool {
         return true
     }
-
+    
+//    override func prefersStatusBarHidden() -> Bool {
+//        return true
+//    }
+    
 }
 
 extension ViewController : RandomNumberGeneratorDelegate {
