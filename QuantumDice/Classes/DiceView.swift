@@ -79,6 +79,7 @@ class DiceView: UIView {
         // Immediate action on d0
         if (base == Dice.d0) {
             showPicker()
+            self.holdTimer?.invalidate()
             return
         }
     }
