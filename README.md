@@ -2,6 +2,8 @@
 
 Interesting API project, initially to show a friend an example of async unit testing in Xcode 7.3.1.  It then turned into a mini app and had a bit of fun with the interface.
 
+[App Store Link](https://itunes.apple.com/us/app/roll-initiative/id1142986245?mt=8)
+
 ## Getting Started
 
 Grab the source and install the [CocoaPods](https://cocoapods.org/)
