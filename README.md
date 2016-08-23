@@ -27,7 +27,7 @@ Please feel free to look at the issues for and create a pull request or contribu
 
 ## Authors
 
-* **Martin Walsh**
+* **Martin Walsh** - [cocojoe](https://github.com/cocojoe/)
 
 ## License
 
