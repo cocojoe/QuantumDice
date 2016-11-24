@@ -1,6 +1,0 @@
-framework module Pods_QuantumDiceTests {
-  umbrella header "Pods-QuantumDiceTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
